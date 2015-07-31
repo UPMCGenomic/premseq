@@ -69,19 +69,19 @@ It has all options given by Trimmomatic :
 
 ### Examples :
 
-      python Filtrage.py SE read_1.fastq -illuminaclip fasta-file.fa:2:10:30
-      python Filtrage.py SE read_1.fq -slidingwindow 10:30
-      python Filtrage.py SE read_1.fq -maxinfo 15:0.8 -crop 7
-      python Filtrage.py SE read_1.fq -slidingwindow 10:30 -leading 30 -minlen 36
-      python Filtrage.py SE read_1.fq -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 4:30 -leading 30 -minlen 36
+      python premseq.py SE read_1.fastq -illuminaclip fasta-file.fa:2:10:30
+      python premseq.py SE read_1.fq -slidingwindow 10:30
+      python premseq.py SE read_1.fq -maxinfo 15:0.8 -crop 7
+      python premseq.py SE read_1.fq -slidingwindow 10:30 -leading 30 -minlen 36
+      python premseq.py SE read_1.fq -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 4:30 -leading 30 -minlen 36
       
 ## Paired ends data
 
-`./Filtrage.py PE` takes two input fastq files and outputs a trimmed version of these files and a two files containing 'single reads' for each direction. 'Single reads' are reads who passed the filter for one direction but not the other. 
+`./premseq.py PE` takes two input fastq files and outputs a trimmed version of these files and a two files containing 'single reads' for each direction. 'Single reads' are reads who passed the filter for one direction but not the other. 
 
 This mode has also all options given by Trimmomatic, see above.
 
 ### Examples :
 
-      python Filtrage.py PE read_1.fastq read_2.fastq -illuminaclip fasta-file.fa:2:10:30 -crop 10
-      python Filtrage.py PE read_1.fq.bz2 read_2.fq.bz2 -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 10:30 -minlen 36
+      python premseq.py PE read_1.fastq read_2.fastq -illuminaclip fasta-file.fa:2:10:30 -crop 10
+      python premseq.py PE read_1.fq.bz2 read_2.fq.bz2 -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 10:30 -minlen 36
