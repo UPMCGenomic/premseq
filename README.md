@@ -66,6 +66,8 @@ It has all options given by Trimmomatic :
 - trim a fixed number of bases from 5' end : `-head <number>`
 - trim a fixed number of bases from 3' end : `-crop <number>`
 - remove read shorter than a given length : `-minlen <length>`
+- remove read which average quality is below the specified threshold : `-avgqual <quality>`
+
 
 ### Examples :
 
