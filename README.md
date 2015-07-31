@@ -54,7 +54,7 @@ or
       
 ## Single ends data
 
-`./Filtrage.py SE` takes an input fastq file and outputs a trimmed version of that file. 
+`./premseq.py SE` takes an input fastq file and outputs a trimmed version of that file. 
 
 It has all options given by Trimmomatic :
 
