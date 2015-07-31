@@ -1,5 +1,7 @@
 # PREMSEQ
 
+PREprocessing Module for rna-SEQ data
+
 ## About
    Most modern sequencing technologies produce read that have adapter sequence at the end, a deteriorating quality towards the ends, incorrectly called bases in some regions and ... . All these bad quality reads negatively impact on assembly, mapping and downstream bioinfomatics analyses. These are particulary true, in de novo assembly where the genome or the transcriptome is reconstructed only based on information contained in reads.
 
