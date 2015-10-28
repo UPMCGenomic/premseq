@@ -19,7 +19,9 @@ PREprocessing Module for rna-SEQ data
 ## Requirements
 
 **Python** 2.7.6
+
 **Java** (for Trimmomatic) 
+
 **Perl** (for FastQC)
 
 ## Usage
