@@ -76,7 +76,7 @@ An example of adapter file is given, it removes illumina adapters and poly(A or 
 - remove read which average quality is below the specified threshold : `-avgqual <quality>`
 - re-encode phred score : `tophred33 | tophred64`
 - number of threads to use : `-threads X`
-- do control quality : `-fastqc`
+- do quality control : `-fastqc`
 
 
 ### Examples :
