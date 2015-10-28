@@ -19,8 +19,8 @@ PREprocessing Module for rna-SEQ data
 ## Requirements
 
 **Python** 2.7.6
-**Java** (Trimmomatic) 
-**Perl** (FastQC
+**Java** (for Trimmomatic) 
+**Perl** (for FastQC)
 
 ## Usage
 
@@ -56,12 +56,15 @@ or
       
 ## Single ends data
 
-`./premseq.py SE` takes an input fastq file and outputs a trimmed version of that file. 
+`./premseq.py SE` takes an input fastq file and output a trimmed version of the file. 
 
 It has all options given by Trimmomatic :
 
-- remove adapter sequences : `illuminaclip <fastaWithAdaptersEtc>:<seed mismatches>:<palindrome clip threshold>:<simple clip threshold>`
-- quality trimming : `-slidingwindow <window-size>:<required-quality>`
+- remove adapter sequences : `illuminaclip <fastaWithAdaptersEtc>:<seed mismatches>:<palindrome clip threshold>:<simple clip threshold>` 
+ An example of adapter file is given, it removes illumina adapters and poly(A or T) tails
+      Recommend : fasta-file:2:30:10
+- quality trimming : `-slidingwindow <window-size>:<required-quality>` 
+      Recommend : 4:30 for data with good quality, else 10:20
 - adaptative quality trimming depending on the length of reads : `-maxinfo <target-length>:<strictness>`
 - trim base from 5' end until the required minimal quality is achieved : `-leading <required-quality>`
 - trim base from 3' end until the required minimal quality is achieved : `-trailing <required-quality>`
@@ -69,6 +72,7 @@ It has all options given by Trimmomatic :
 - trim a fixed number of bases from 3' end : `-crop <number>`
 - remove read shorter than a given length : `-minlen <length>`
 - remove read which average quality is below the specified threshold : `-avgqual <quality>`
+- re-encode phred score : `tophred33 | tophred64`
 
 
 ### Examples :
@@ -76,8 +80,9 @@ It has all options given by Trimmomatic :
       python premseq.py SE read_1.fastq -illuminaclip fasta-file.fa:2:10:30
       python premseq.py SE read_1.fq -slidingwindow 10:30
       python premseq.py SE read_1.fq -maxinfo 15:0.8 -crop 7
-      python premseq.py SE read_1.fq -slidingwindow 10:30 -leading 30 -minlen 36
+      python premseq.py SE read_1.fq -slidingwindow 10:30 -leading 30 -minlen 36 -fastqc
       python premseq.py SE read_1.fq -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 4:30 -leading 30 -minlen 36
+      
       
 ## Paired ends data
 
@@ -88,4 +93,6 @@ This mode has also all options given by Trimmomatic, see above.
 ### Examples :
 
       python premseq.py PE read_1.fastq read_2.fastq -illuminaclip fasta-file.fa:2:10:30 -crop 10
+      python premseq.py PE read_1.fastq read_2.fastq -illuminaclip fasta-file.fa:2:10:30 -crop 10 -maxinfo 15:0.9
       python premseq.py PE read_1.fq.bz2 read_2.fq.bz2 -illuminaclip fasta-file.fa:2:10:30 -slidingwindow 10:30 -minlen 36
+      python premseq.py PE read_1.fastq read_2.fastq -illuminaclip fasta-file.fa:2:10:30 -trailing 30 -fastqc
