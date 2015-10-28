@@ -66,7 +66,6 @@ It has all options given by Trimmomatic :
 
       Recommend : fasta-file:2:30:10
 - quality trimming : `-slidingwindow <window-size>:<required-quality>` 
-
       Recommend : 4:30 for data with good quality, else 10:20
 - adaptative quality trimming depending on the length of reads : `-maxinfo <target-length>:<strictness>`
 - trim base from 5' end until the required minimal quality is achieved : `-leading <required-quality>`
