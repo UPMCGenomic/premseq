@@ -49,7 +49,7 @@ To launch trimmomatic using commandline arguments see below:
 
    For more informations, see module help, running:
 
-`python ./premseq.py --help`  or  `python ./premseq.py -h`
+`python ./premseq.py --help`      or     `python ./premseq.py -h`
       
       
 ## Single ends data
