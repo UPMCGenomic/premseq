@@ -60,7 +60,7 @@ or
 
 `./premseq.py SE` takes an input fastq file and output a trimmed version of the file. 
 
-It has all options given by Trimmomatic :
+It has all given options (most are from Trimmoatic) :
 
 - remove adapter sequences : `illuminaclip <fastaWithAdaptersEtc>:<seed mismatches>:<palindrome clip threshold>:<simple clip threshold>`   
 An example of adapter file is given, it removes illumina adapters and poly(A or T) tails  
@@ -75,6 +75,8 @@ An example of adapter file is given, it removes illumina adapters and poly(A or 
 - remove read shorter than a given length : `-minlen <length>`
 - remove read which average quality is below the specified threshold : `-avgqual <quality>`
 - re-encode phred score : `tophred33 | tophred64`
+- number of threads to use : `-threads X`
+- do control quality : `-fastqc`
 
 
 ### Examples :
